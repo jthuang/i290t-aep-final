@@ -30,7 +30,7 @@ target_journals = [
       }
 ]
 
-class TestGetMyPlace(unittest.TestCase):
+class TestGetMyJournals(unittest.TestCase):
 
    def setUp(self):
       self.user1_journals = getMyJournals("1")
@@ -38,8 +38,6 @@ class TestGetMyPlace(unittest.TestCase):
       self.user10_journals = getMyJournals("10")
 
    def test_user1_journals(self):
-      print self.user1_journals
-      print target_journals
       # test the lenth of the result list of user1 should be equal to the target list
       self.assertEqual(len(target_journals), len(self.user1_journals))
 
@@ -80,11 +78,11 @@ class TestGetMyPlace(unittest.TestCase):
          i += 1
 
 
-   def test_user2_places(self):
+   def test_user2_journals(self):
       # test the user2's journal list should be empty
       self.assertEqual([], self.user2_journals)
 
-   def test_user10_places(self):
+   def test_user10_journals(self):
       # there is no user 10, the journal list should be empty
       self.assertEqual([], self.user10_journals)
       
